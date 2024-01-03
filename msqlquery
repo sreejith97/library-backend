@@ -1,0 +1,16 @@
+-- 1.create table for Authors and Books
+
+CREATE TABLE `authors` (
+  `authorId` INT NOT NULL AUTO_INCREMENT,
+  `authorName` VARCHAR(100) NULL,
+  `birthYear` INT NULL,
+  `nationality` VARCHAR(100) NULL,
+  PRIMARY KEY (`authorId`));
+
+CREATE TABLE `books` (
+  `bookId` INT NOT NULL AUTO_INCREMENT,
+  `title` VARCHAR(200) NULL,
+  `ISBN` VARCHAR(45) NULL,
+  `publicationYear` INT NULL,
+  `authorId` INT FOREIGN KEY REFERENCES authors(`authorId`),
+  PRIMARY KEY (`bookId`))
